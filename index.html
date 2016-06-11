@@ -3,49 +3,123 @@
 <head>
   <title>電気通信大学 子供のためのプログラミング教室</title>
   <link rel="stylesheet" type="text/css" href="./assets/stylesheets/style.css">
+  <!-- twitter bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div id="body">
-    <div id="header">
-      <ul class="line-menu">
-        <li><a href="">電気通信大学</a></li>
-        <li><a href="">Q&amp;A</a></li>
-        <li><a href="">お問い合わせ</a></li>
-        <li><a href="">ログイン</a></li>
-      </ul>
-      <h1>
-        <img src="./assets/images/pct_emblem02.jpg">
-        <span>電気通信大学<br>子供のためのプログラミング教室</span>
-      </h1>
-      <br style="clear: both;">
-    </div>
-    <div id="contents">
-      <img src="./assets/images/head.jpg" style="display: block; margin: auto;">
-      <div id="">
-        <p>
-          2016年5月から、インターネット時代を生きる子供たちのために「電気通信大学」と「電気通信大学ベンチャー」が連携して『子供のためのプログラミング教室』を始めます。
-          <br>
-          プログラミングに使う言語は、WEB系、スマホ系、電子工作系、組み込み系等、多様です。
-          <br>
-          今回スタートする教室ではWEB系の「Python（パイソン）」というプログラミング言語を取り上げました。
-        </p>
-      </div>
-      <div id="objectives">
-        <h2>目的</h2>
-        <ul>
-          <li>PythonでWEBアプリを作れる！</li>
-          <li>自分でHPを作れる！</li>
+  <div class="container">
+    <nav id="header" class="navbar navbar-default panel panel-default">
+      <div class="panel-heading">
+        <ul class="nav nav-pills nav-right col-md-offset-9">
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+              電気通信大学
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+              問い合わせ
+            </a>
+          </li>
         </ul>
       </div>
-      <div id="project_charter">
-        <h2>電通大プログラミング教室憲章</h2>
-        <a href="">http://honyarara.honyahonya.com</a>
+      <div id="header-body" class="row-fluid panel-body">
+        <div class="h2">
+          <a href="#" style="display: inline-block;">
+            <img src="./assets/images/pct_emblem02.jpg">
+            <span>電気通信大学<br class="hidden-md hidden-lg">
+            子供のための<br class="visible-xs">プログラミング教室</span>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-header panel-footer col-md-12 col-sm-12">
+        <div class="text-right col-md-push-7 col-xs-5 col-xs-push-6">
+          <strong id="user_name" style="margin: 5px;">ユーザ名</strong>
+          <a href="#" class="btn btn-warning">ログアウト</a>
+        </div>
+        <button id="nav-toggle"
+                type="button"
+                class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#sidebar-main"
+                area-expanted="false">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="sidebar"
+         class="col-sm-3 row-fluid">
+      <div id="sidebar-main" class="navbar-collapse collapse">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation" class="active"><a href="#">Top</a></li>
+          <li role="presentation"><a href="#">質問掲示板</a></li>
+          <li role="presentation"><a href="#">授業資料DL</a></li>
+          <li role="presentation"><a href="#">スケジュール</a></li>
+          <li role="presentation"><a href="#">講師紹介</a></li>
+          <li role="presentation"><a href="#">プログラム例</a></li>
+        </ul>
       </div>
     </div>
-    <div id="footer">
-      &copy; 2016 電気通信大学 子供のためのプログラミング教室
+
+    <div id="content"
+         class="col-sm-9 row-fluid">
+      <div id="description" class="row-fluid section">
+        <h3>説明文</h3>
+        <span>
+          ここには説明文を入れる。<br>
+          今は仮の文章を入れている。<br>
+          ほげ。
+        </span>
+      </div>
+
+      <div id="news" class="row-fluid section">
+        <div class="panel panel-default" style="margin-bottom: 5px;">
+          <div class="panel-heading">新着ニュース</div>
+          <div class="list-group panel-body">
+            <a class="list-group-item" href="#">hoge</a>
+            <a class="list-group-item" href="#">hoge</a>
+            <a class="list-group-item" href="#">hoge</a>
+            <a class="list-group-item" href="#">hoge</a>
+            <a class="list-group-item" href="#">hoge</a>
+          </div>
+          <nav class="panel-footer" style="text-align: center;">
+            <ul class="pagination" style="margin-top: 2px; margin-bottom: 2px;">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
+
+    <footer id="footer" class="text-center col-xs-12 row-fluid section">
+      <span class="vertical-middle">&copy; 2016 電気通信大学 子供のためのプログラミング教室</span>
+    </footer>
   </div>
 </body>
 </html>
