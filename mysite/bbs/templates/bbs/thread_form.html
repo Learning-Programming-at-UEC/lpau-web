@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+スレッドの新規作成
+{% endblock %}
+
+{% block content %}
+<h1>スレッドの新規作成</h1>
+<form action="./" method="post">
+{% csrf_token %}
+<table>
+{{ form }}
+</table>
+<input type="submit" value="作成する" />
+</form>
+<p><a href="/">トップページに戻る</a></p>
+{% endblock %}
