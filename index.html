@@ -13,17 +13,17 @@
 </head>
 
 <body>
-  <div class="container">
-    <nav id="header" class="navbar navbar-default panel panel-default">
-      <div class="panel-heading">
-        <ul class="nav nav-pills nav-right col-md-offset-9">
-          <li>
+  <div class="container-fluid">
+    <nav id="header" class="navbar navbar-default panel panel-default row-fluid" role="navigation">
+      <div id="header-header" class="panel-heading">
+        <ul class="nav nav-pills text-right">
+          <li class="app-nav-pills-right" role="presentation">
             <a href="#">
               <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
               電気通信大学
             </a>
           </li>
-          <li>
+          <li class="app-nav-pills-right" role="presentation">
             <a href="#">
               <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
               問い合わせ
@@ -40,8 +40,8 @@
           </a>
         </div>
       </div>
-      <div class="navbar-header panel-footer col-md-12 col-sm-12">
-        <div class="text-right col-md-push-7 col-xs-5 col-xs-push-6">
+      <div id="header-footer" class="panel-footer text-right">
+        <div id="user-info">
           <strong id="user_name" style="margin: 5px;">ユーザ名</strong>
           <a href="#" class="btn btn-warning">ログアウト</a>
         </div>
@@ -61,15 +61,15 @@
 
     <div id="sidebar"
          class="col-sm-3 row-fluid">
-      <div id="sidebar-main" class="navbar-collapse collapse">
-        <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="#">Top</a></li>
-          <li role="presentation"><a href="#">質問掲示板</a></li>
-          <li role="presentation"><a href="#">授業資料DL</a></li>
-          <li role="presentation"><a href="#">スケジュール</a></li>
-          <li role="presentation"><a href="#">講師紹介</a></li>
-          <li role="presentation"><a href="#">プログラム例</a></li>
-        </ul>
+      <div id="sidebar-main" class="collapse navbar-collapse">
+              <ul class="nav nav-pills nav-stacked">
+                <li role="presentation" class="active"><a href="#">Top</a></li>
+                <li role="presentation"><a href="#">質問掲示板</a></li>
+                <li role="presentation"><a href="#">授業資料DL</a></li>
+                <li role="presentation"><a href="#">スケジュール</a></li>
+                <li role="presentation"><a href="#">講師紹介</a></li>
+                <li role="presentation"><a href="#">プログラム例</a></li>
+              </ul>
       </div>
     </div>
 
