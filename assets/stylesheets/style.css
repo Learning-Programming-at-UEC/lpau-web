@@ -29,6 +29,22 @@
   padding-bottom: 20px;
 }
 
+.thumbnail {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.thumbnail > .list-group {
+  margin-bottom: 2px;
+}
+.thumbnail > .list-group > li {
+  height: 8em;
+  border-width: 1px 0px;
+  border-radius: 0px;
+}
+.thumbnail > .list-group > li:last-child {
+  border-bottom-width: 0px;
+}
+
 #footer {
   height: 36px;
   color: #FFF;
