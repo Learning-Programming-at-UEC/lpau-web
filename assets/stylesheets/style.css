@@ -6,11 +6,13 @@
 #header-body > div > a {
   text-decoration: none;
 }
+
 #user-info,
 #user-info * {
   display: inline-block;
   text-align: right;
 }
+
 #nav-toggle {
   margin: 1px 10px;
 }
@@ -22,7 +24,6 @@
 .row, .row-fluid {
   margin-top: 2px;
 }
-
 .section {
   padding-top: 2px;
   padding-bottom: 20px;
