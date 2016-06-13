@@ -45,6 +45,10 @@
   border-bottom-width: 0px;
 }
 
+#document-list .list-group-item-text > span {
+  float: right;
+}
+
 #footer {
   height: 36px;
   color: #FFF;
