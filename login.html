@@ -43,68 +43,28 @@
       </div>
       <div id="header-footer" class="panel-footer text-right">
         <div id="user-info">
-          <a href="login.html" class="btn btn-info">ログイン</a>
+          <a href="login.html" class="btn btn-info" disabled="disabled">ログイン</a>
         </div>
       </div>
     </nav>
 
-    <div id="external-menu" class="row-fluid section">
-      <div class="col-md-6 col-sm-12">
-        <a href="#" class="btn btn-lg btn-primary">
-          <div class="media-body text-left">
-            <h3 class="media-heading">メニュー名</h4>
-            簡易説明
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <a href="#" class="btn btn-lg btn-primary">
-          <div class="media-body text-left">
-            <h3 class="media-heading">メニュー名</h4>
-            簡易説明
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <a href="#" class="btn btn-lg btn-primary">
-          <div class="media-body text-left">
-            <h3 class="media-heading">メニュー名</h4>
-            簡易説明
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <a href="#" class="btn btn-lg btn-primary">
-          <div class="media-body text-left">
-            <h3 class="media-heading">メニュー名</h4>
-            簡易説明
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <a href="#" class="btn btn-lg btn-primary">
-          <div class="media-body text-left">
-            <h3 class="media-heading">メニュー名</h4>
-            簡易説明
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <a href="#" class="btn btn-lg btn-primary">
-          <div class="media-body text-left">
-            <h3 class="media-heading">メニュー名</h4>
-            簡易説明
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <a href="#" class="btn btn-lg btn-primary">
-          <div class="media-body text-left">
-            <h3 class="media-heading">メニュー名</h4>
-            簡易説明
-          </div>
-        </a>
-      </div>
+    <div id="content" class="row-fluid">
+      <form action="index.html" class="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
+        <div class="form-group">
+          <label for="user_name">ユーザ名</label>
+          <input id="user_name" class="form-control" type="text" name="user_name">
+        </div>
+        <div class="form-group">
+          <label for="password">パスワード</label>
+          <input id="password" class="form-control" type="password" name="password">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="">ユーザ名を保存する
+          </label>
+        </div>
+        <input class="btn btn-success" type="submit" value="ログイン">
+      </form>
     </div>
 
     <footer id="footer" class="text-center col-xs-12 row-fluid section">
