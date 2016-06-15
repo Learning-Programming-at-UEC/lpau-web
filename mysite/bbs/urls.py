@@ -14,5 +14,5 @@ urlpatterns = [
     # トップページ。スレッド一覧のページにリダイレクトする
     url(r'^$', RedirectView.as_view(), {'url': '/1/'}),
     url(r'^thread/new/$', views.ThreadFormView.as_view(), name="form"),
-    url(r'^thread/(?P<thread_id>\d+)/$', 'bbs.views.thread_detail'),
+    url(r'^thread/(?P<pk>\d+)/$', views.ThreadDetailView.as_view(), name='thread_detail'),
 ]

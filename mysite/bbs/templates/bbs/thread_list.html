@@ -8,7 +8,7 @@
 <ul>
 {% for thread in object_list %}
   <li>
-    <a href="/bbs/thread/{{ thread.id }}/">{{ thread.message }}</a>
+    <a href="/bbs/thread/{{ thread.id }}/">{{ thread.title }}</a>
     ({{ thread.pub_date|date:"Y年m月d日h時i分s秒" }})
   </li>
 {% endfor %}
