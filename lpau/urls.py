@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.views import login, logout
 
 urlpatterns = [
+    url(r'^', include('external.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^account/login/$', login,
         {'template_name': 'accounts/login.html'}

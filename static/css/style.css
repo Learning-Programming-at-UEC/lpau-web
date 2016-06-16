@@ -1,21 +1,41 @@
-#header > div > div > img,
-#header > div > div > span {
+#header-body > div > a > img,
+#header-body > div > a > span {
   vertical-align: middle;
   display: inline-block;
 }
+#header-body > div > a {
+  text-decoration: none;
+}
+
+#user-info,
+#user-info * {
+  display: inline-block;
+  text-align: right;
+}
+
 #nav-toggle {
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin: 0px 10px;
+}
+.nav > .app-nav-pills-right {
+  display: inline-block;
+  float: none;
 }
 
 .row, .row-fluid {
   margin-top: 2px;
-  margin-bottom: 15px;
 }
 
 .section {
   padding-top: 2px;
   padding-bottom: 20px;
+}
+
+#external-menu > div {
+  padding: 8px 15px;
+}
+
+#external-menu .btn {
+  padding: 25px;
 }
 
 #footer {
