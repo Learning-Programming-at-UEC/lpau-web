@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block header %}
+<strong>ユーザ名</strong>
+<a href="{% url 'logout' %}" class="btn btn-warning" role="button">ログアウト</a>
+{% endblock %}
+
+{% block sidebar %}
+<div id="sidebar-main" class="navbar-collapse collapse">
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active"><a href="#">Top</a></li>
+    <li role="presentation"><a href="#">質問掲示板</a></li>
+    <li role="presentation"><a href="#">授業資料DL</a></li>
+    <li role="presentation"><a href="#">スケジュール</a></li>
+    <li role="presentation"><a href="#">講師紹介</a></li>
+    <li role="presentation"><a href="#">プログラム例</a></li>
+  </ul>
+</div>
+{% endblock %}
+

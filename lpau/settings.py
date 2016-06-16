@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'util',
     'homepage',
     'accounts',
+    'membership',
 ]
 
 MIDDLEWARE_CLASSES = [

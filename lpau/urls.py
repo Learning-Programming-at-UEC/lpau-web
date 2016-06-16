@@ -24,4 +24,5 @@ urlpatterns = [
         ),
     url(r'^account/logout/$', logout,
         {'template_name': 'accounts/logged_out.html'}, name='logout'),
+    url(r'^membership/', include('membership.urls')),
 ]

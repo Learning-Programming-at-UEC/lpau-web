@@ -1,0 +1,59 @@
+{% extends "base_membership.html" %}
+
+{% block title %}Top&nbsp;|&nbsp;{% endblock %}
+
+{% block content %}
+<div id="description" class="row-fluid section">
+  <h3>説明文</h3>
+  <span>
+    ここには説明文を入れる。<br>
+    今は仮の文章を入れている。<br>
+    ほげ。
+  </span>
+</div>
+
+<div id="news" class="row-fluid section">
+  <div class="panel panel-default" style="margin-bottom: 5px;">
+    <div class="panel-heading">新着ニュース</div>
+    <div class="list-group panel-body">
+      <a class="list-group-item" href="#">hoge</a>
+      <a class="list-group-item" href="#">hoge</a>
+      <a class="list-group-item" href="#">hoge</a>
+      <a class="list-group-item" href="#">hoge</a>
+      <a class="list-group-item" href="#">hoge</a>
+      {% comment %}
+      {# 最大5個まで #}
+      {% for news in news_list %}
+      <tr>
+        <td>{{ news }}</td>
+      </tr>
+      {% endcomment %}
+    </div>
+    <nav class="panel-footer" style="text-align: center;">
+      <ul class="pagination" style="margin-top: 2px; margin-bottom: 2px;">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        {% comment %}
+        {% for page_num in page_nums %}
+        <li><a href="#">{{ page_num }}</a></li>
+        {% endfor %}
+        {% endcomment %}
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+{% endblock content %}
+

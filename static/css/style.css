@@ -1,0 +1,30 @@
+#header > div > div > img,
+#header > div > div > span {
+  vertical-align: middle;
+  display: inline-block;
+}
+#nav-toggle {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.row, .row-fluid {
+  margin-top: 2px;
+  margin-bottom: 15px;
+}
+
+.section {
+  padding-top: 2px;
+  padding-bottom: 20px;
+}
+
+#footer {
+  height: 36px;
+  color: #FFF;
+  background-color: #3880bc;
+  border: 1px solid;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 6px;
+}
