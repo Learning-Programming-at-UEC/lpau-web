@@ -70,8 +70,8 @@
       class="col-sm-3 row-fluid">
       <div id="sidebar-main" class="collapse navbar-collapse">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="index.html">Top</a></li>
-          <li role="presentation"><a href="bbs.html">質問掲示板</a></li>
+          <li role="presentation"><a href="index.html">Top</a></li>
+          <li role="presentation" class="active"><a href="bbs.html">質問掲示板</a></li>
           <li role="presentation"><a href="download_lecture_document.html">授業資料DL</a></li>
           <li role="presentation" class="disabled"><a href="#">スケジュール</a></li>
           <li role="presentation"><a href="teachers.html">講師紹介</a></li>
@@ -83,43 +83,85 @@
     <div id="content"
       class="col-sm-9 row-fluid">
       <div id="description" class="row-fluid section">
-        <h3>説明文</h3>
+        <h3>質問掲示板</h3>
         <span>
           ここには説明文を入れる。<br>
-          今は仮の文章を入れている。<br>
-          ほげ。
+          今は仮。まる。
         </span>
       </div>
 
-      <div id="news" class="row-fluid section">
-        <div class="panel panel-default" style="margin-bottom: 5px;">
-          <div class="panel-heading">新着ニュース</div>
-          <div class="list-group panel-body">
-            <a class="list-group-item" href="#">hoge</a>
-            <a class="list-group-item" href="#">hoge</a>
-            <a class="list-group-item" href="#">hoge</a>
-            <a class="list-group-item" href="#">hoge</a>
-            <a class="list-group-item" href="#">hoge</a>
-          </div>
-          <nav class="panel-footer" style="text-align: center;">
-            <ul class="pagination" style="margin-top: 2px; margin-bottom: 2px;">
-              <li>
-                <a href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                <a href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+      <div id="bbs" class="row-fluid section">
+        <div class="list-group">
+          <a id="comment-0" class="list-group-item" href="#comment-0">
+            <div class="list-group-item-heading">
+              <h4 class="comment-user">投稿者名
+                <small class="comment-date">YYYY-mm-dd hh:mm:ss</small>
+              </h4>
+            </div>
+            <p class="list-group-item-text">
+              コメントですコメントなんです。140文字くらいで制限とか入れた方がいいかな。140文字って結構ある気がするけど、多分コード張り付けたりするから全然足らないかも？じゃあどうするのって思ったけどmysqlのtextの最大文字数は65535文字とからしいから適当で大丈夫かも知れな文字数
+            </p>
+          </a>
+          <a id="comment-1" class="list-group-item" href="#comment-1">
+            <div class="list-group-item-heading">
+              <h4 class="comment-user">投稿者名
+                <small class="comment-date">YYYY-mm-dd hh:mm:ss</small>
+              </h4>
+            </div>
+            <p class="list-group-item-text">
+              ↑は140文字のテストらしいよ
+            </p>
+          </a>
+          <a id="comment-2" class="list-group-item" href="#comment-2">
+            <div class="list-group-item-heading">
+              <h4 class="comment-user">投稿者名
+                <small class="comment-date">YYYY-mm-dd hh:mm:ss</small>
+              </h4>
+            </div>
+            <p class="list-group-item-text">
+              改行テスト01<br>
+              改行テスト02<br>
+              改行テスト03<br>
+              改行テスト04<br>
+              改行テスト05<br>
+              改行テスト06<br>
+              改行テスト07<br>
+              改行テスト08<br>
+              改行テスト09<br>
+              改行テスト10<br>
+              うーんあんまり違和感ないな？
+            </p>
+          </a>
+          <a id="comment-3" class="list-group-item" href="#comment-3">
+            <div class="list-group-item-heading">
+              <h4 class="comment-user">投稿者名
+                <small class="comment-date">YYYY-mm-dd hh:mm:ss</small>
+              </h4>
+            </div>
+            <p class="list-group-item-text">
+              コードはハイライトがあるといいけど実装は間に合いません。
+            </p>
+          </a>
+          <a id="comment-4" class="list-group-item" href="#comment-4">
+            <div class="list-group-item-heading">
+              <h4 class="comment-user">投稿者名
+                <small class="comment-date">YYYY-mm-dd hh:mm:ss</small>
+              </h4>
+            </div>
+            <p class="list-group-item-text">
+              コメントですコメントなんです
+            </p>
+          </a>
+          <a id="comment-5" class="list-group-item" href="#comment-5">
+            <div class="list-group-item-heading">
+              <h4 class="comment-user">投稿者名
+                <small class="comment-date">YYYY-mm-dd hh:mm:ss</small>
+              </h4>
+            </div>
+            <p class="list-group-item-text">
+              コメントですコメントなんです
+            </p>
+          </a>
         </div>
       </div>
     </div>
