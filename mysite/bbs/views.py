@@ -39,6 +39,7 @@ class ThreadDetailView(generic.DetailView):
         if form.is_valid():
             # コメントを登録
             comment = form.save(commit=False)
+            comment.usrname = request.user.username
             comment.thread = get_object_or_404(Thread, pk=self.kwargs.get(self.pk_url_kwarg))
             comment.save()
             form = CommentForm()  # フォームの初期化

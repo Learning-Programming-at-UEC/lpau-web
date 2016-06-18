@@ -16,6 +16,7 @@ class Thread(models.Model):
 
 class Comment(models.Model):
     thread = models.ForeignKey(Thread, verbose_name="スレッド")
+    usrname = models.CharField("お名前", max_length=100, blank=False)
     message = models.CharField("メッセージ", max_length=200, blank=False)
     pub_date = models.DateTimeField("登録日", auto_now_add=True, editable=False)
 
