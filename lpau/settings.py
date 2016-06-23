@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'membership',
     'external',
+    'gunicorn',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,13 +124,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
-
 LOGIN_URL = '/account/login/'
 LOGOUT_URL = '/account/logout/'
 LOGIN_REDIRECT_URL = '/'
 
 STATIC_URL = '/static/'
+STATIC_ROOT = ''
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )

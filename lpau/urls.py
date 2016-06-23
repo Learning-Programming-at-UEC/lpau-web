@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
@@ -27,4 +28,5 @@ urlpatterns = [
         {'template_name': 'accounts/logged_out.html'}, name='logout'),
 
     url(r'^membership/', include('membership.urls')),
-]
+] + staticfiles_urlpatterns()
+
