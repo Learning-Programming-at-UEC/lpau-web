@@ -15,7 +15,7 @@
 {% for comment in comment_list %}
   <li>
     {{ comment.message }}<br />
-    {{comment.usrname}}:({{ comment.pub_date|date:"Y年m月d日h時i分s秒" }})
+    {{comment.username}}:({{ comment.pub_date|date:"Y年m月d日h時i分s秒" }})
   </li>
 {% endfor %}
 </ul>
