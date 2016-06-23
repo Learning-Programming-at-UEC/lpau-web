@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+スレッド一覧
+{% endblock %}
+
+{% block content %}
+<ul>
+{% for thread in object_list %}
+  <li>
+    <a href="/bbs/thread/{{ thread.id }}/">{{ thread.title }}</a>
+    ({{ thread.pub_date|date:"Y年m月d日h時i分s秒" }})
+  </li>
+{% endfor %}
+</ul>
+
+<p><a href="/bbs/thread/new/">スレッドの新規作成</a></p>
+
+<p>{{ page }} / {{ pages }}</p>
+
+{% if has_previous %}
+<p><a href="/{{ previous }}">前のページ</a></p>
+{% endif %}
+
+{% if has_next %}
+<p><a href="/{{ next }}">次のページ</a></p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ object.title }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p>
+  {{ object.message }}<br />
+  ({{ object.pub_date|date:"Y年m月d日h時i分s秒" }})
+</p>
+<hr />
+<ul>
+{% for comment in comment_list %}
+  <li>
+    {{ comment.message }}<br />
+    {{comment.username}}:({{ comment.pub_date|date:"Y年m月d日h時i分s秒" }})
+  </li>
+{% endfor %}
+</ul>
+<hr />
+<form action="./" method="post">
+{{ form.as_p }}
+<input type="submit" value="コメントを投稿する" />
+</form>
+<p><a href="/bbs/1/">トップページに戻る</a></p>
+{% endblock %}
