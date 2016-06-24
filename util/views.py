@@ -23,9 +23,11 @@ class LoginRequiredViewMixin(object):
         return view
 
 
-class CommonTemplateView(LoginRequiredViewMixin, TemplateView):
+class CommonView(LoginRequiredViewMixin, View):
     pass
 
+class CommonTemplateView(LoginRequiredViewMixin, TemplateView):
+    pass
 
 class CommonListView(LoginRequiredViewMixin, ListView):
     pass
