@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r1!bg=wna(r3pxm22)f0crpz&py%w2f@3cfo38*s$c$(g5v6v3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -37,12 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # server
+    'gunicorn',
+    # plugin
+    'django_extensions',
+    # dev
     'util',
     'homepage',
     'accounts',
     'membership',
     'external',
-    'gunicorn',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -80,13 +85,8 @@ WSGI_APPLICATION = 'lpau.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+# DB情報は外部ファイルから読み出す
+DATABASES = json.load(open(os.path.join(BASE_DIR, 'databases.json')))
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
