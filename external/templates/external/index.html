@@ -6,45 +6,16 @@
 
 {% block content %}
 <div id="external-menu" class="row-fluid section">
+  {% for menu in menu_list %}
   <div class="col-sm-6 col-xs-12">
-    <a href="#" class="btn btn-lg btn-primary">
+    <a href="{{ menu.link }}"
+      class="btn btn-lg btn-primary {% if menu.disable %}disabled{% endif %}">
       <div class="media-body text-left">
-        <h3 class="media-heading">メニュー名</h4>
-        簡易説明
+        <h3 class="media-heading">{{ menu.name }}</h4>
+        {# 簡易説明 #}
       </div>
     </a>
   </div>
-  <div class="col-sm-6 col-xs-12">
-    <a href="#" class="btn btn-lg btn-primary">
-      <div class="media-body text-left">
-        <h3 class="media-heading">メニュー名</h4>
-        簡易説明
-      </div>
-    </a>
-  </div>
-  <div class="col-sm-6 col-xs-12">
-    <a href="#" class="btn btn-lg btn-primary">
-      <div class="media-body text-left">
-        <h3 class="media-heading">メニュー名</h4>
-        簡易説明
-      </div>
-    </a>
-  </div>
-  <div class="col-sm-6 col-xs-12">
-    <a href="#" class="btn btn-lg btn-primary">
-      <div class="media-body text-left">
-        <h3 class="media-heading">メニュー名</h4>
-        簡易説明
-      </div>
-    </a>
-  </div>
-  <div class="col-sm-6 col-xs-12">
-    <a href="#" class="btn btn-lg btn-primary">
-      <div class="media-body text-left">
-        <h3 class="media-heading">メニュー名</h4>
-        簡易説明
-      </div>
-    </a>
-  </div>
+  {% endfor %}
 </div>
 {% endblock content %}
