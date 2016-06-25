@@ -13,20 +13,22 @@
         {% if sidebar == 'index' %}class="active"{% endif %}>
         <a href="{% url 'membership:index' %}">Top</a>
       </li>
-      <li role="presentation">
+      <li role="presentation"
+        {% if sidebar == 'bbs' %}class="active"{% endif %}>
         <a href="{% url 'membership:bbs' 1 %}">質問掲示板</a>
       </li>
-      <li role="presentation">
+      <li role="presentation"
+        {% if sidebar == 'download_document' %}class="active"{% endif %}>
         <a href="{% url 'membership:download_document' %}">授業資料ダウンロード</a>
       </li>
-      <li role="presentation">
+      <li role="presentation" class="disabled">
         <a href="#">スケジュール</a>
       </li>
       <li role="presentation"
         {% if sidebar == 'teachers' %}class="active"{% endif %}>
         <a href="{% url 'membership:teachers' %}">講師紹介</a>
       </li>
-      <li role="presentation">
+      <li role="presentation" class="disabled">
         <a href="#">プログラム例</a>
       </li>
     </ul>
