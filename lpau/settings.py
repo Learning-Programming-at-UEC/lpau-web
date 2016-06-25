@@ -26,7 +26,7 @@ SECRET_KEY = 'r1!bg=wna(r3pxm22)f0crpz&py%w2f@3cfo38*s$c$(g5v6v3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
