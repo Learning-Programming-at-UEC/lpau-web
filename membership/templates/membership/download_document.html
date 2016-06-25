@@ -12,23 +12,23 @@
 </div>
 
 <div id="document-list" class="row-fluid section">
-  <div class="panel panel-default" style="margin-bottom: 5px;">
+  {% for difficulty, documents in document_list.items %}
+  <div class="panel panel-default" style="margin-bottom: 20px;">
     <div class="list-group panel-body">
-      {% for document in document_list %}
-      {% comment %}
-        <a class="list-group-item" href="#">
-        <a class="list-group-item" href="{% url 'download_file' %}{{ document.date }}">
-      {% endcomment %}
-      <a class="list-group-item" href="/membership/download_file/{{ document.date }}">
-        <h4 class="list-group-item-heading">{{ document.file_name }}</h4>
+      {% for document in documents %}
+      <a class="list-group-item" href="{% url 'membership:download_file' difficulty=difficulty date=document.date %}">
+        <h4 class="list-group-item-heading">
+          {{ document.file_name }}
+          <small>実施日:&nbsp;{{ document.datetime|date:'Y年m月d日' }}</small>
+        </h4>
         <p class="list-group-item-text">
-          {{ document }}
-          <span>
-          </span>
+          {# 未実装 #}
+          {{ document.description }}
         </p>
       </a>
       {% endfor %}
     </div>
+    {% comment %}
     <nav class="panel-footer text-center">
       <ul class="pagination" style="margin-top: 2px; margin-bottom: 2px;">
         <li>
@@ -48,6 +48,8 @@
         </li>
       </ul>
     </nav>
+    {% endcomment %}
   </div>
+  {% endfor %}
 </div>
 {% endblock content_membership %}

@@ -15,7 +15,7 @@ urlpatterns = [
     # /membership/download_document/
     url(r'^download_document/$', views.DownloadDocumentView.as_view(),
         {'sidebar': 'download_document'}, name='download_document'),
-    url(r'^download_file/(?P<date>\w+)/$', views.DownloadFileView.as_view(),
+    url(r'^download_file/(?P<difficulty>\w+)/(?P<date>\d+)/$', views.DownloadFileView.as_view(),
         name='download_file'),
     # /membership/schedule/
     # /membership/teachers/
