@@ -13,11 +13,12 @@
 </div>
 
 <div id="news" class="row-fluid section">
+  {% for teacher in teachers %}
   <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'img/shadow.png' %}" class="img-rounded">
       <div class="caption">
-        <h3講師名前1<br class="visible-sm"><small>（ふりがな）</small></h3>
+        <h3>{{ teacher.name }}<br class="visible-sm"><small>（{{ teacher.kana }}）</small></h3>
       </div>
       <ul class="list-group">
         <li class="list-group-item">
@@ -25,7 +26,7 @@
             自己紹介
           </h4>
           <p class="list-group-item-text">
-            簡単な紹介を書く
+            {{ teacher.introduction|linebreaksbr }}
           </p>
         </li>
         <li class="list-group-item">
@@ -33,116 +34,13 @@
             みんなへ
           </h4>
           <p class="list-group-item-text">
-            ああああてすとてすと
+            {{ teacher.to_students|linebreaksbr }}
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="thumbnail">
-      <img src="{% static 'img/shadow.png' %}" class="img-rounded">
-      <div class="caption">
-        <h3講師名前2<br class="visible-sm"><small>（ふりがな）</small></h3>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            自己紹介
-          </h4>
-          <p class="list-group-item-text">
-            簡単な紹介を書く
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            みんなへ
-          </h4>
-          <p class="list-group-item-text">
-            ああああてすとてすと
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="thumbnail">
-      <img src="{% static 'img/shadow.png' %}" class="img-rounded">
-      <div class="caption">
-        <h3講師名前3<br class="visible-sm"><small>（ふりがな）</small></h3>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            自己紹介
-          </h4>
-          <p class="list-group-item-text">
-            簡単な紹介を書く
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            みんなへ
-          </h4>
-          <p class="list-group-item-text">
-            ああああてすとてすと
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="thumbnail">
-      <img src="{% static 'img/shadow.png' %}" class="img-rounded">
-      <div class="caption">
-        <h3講師名前4<br class="visible-sm"><small>（ふりがな）</small></h3>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            自己紹介
-          </h4>
-          <p class="list-group-item-text">
-            簡単な紹介を書く
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            みんなへ
-          </h4>
-          <p class="list-group-item-text">
-            ああああてすとてすと
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="thumbnail">
-      <img src="{% static 'img/shadow.png' %}" class="img-rounded">
-      <div class="caption">
-        <h3講師名前5<br class="visible-sm"><small>（ふりがな）</small></h3>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            自己紹介
-          </h4>
-          <p class="list-group-item-text">
-            簡単な紹介を書く
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h4 class="list-group-item-heading">
-            みんなへ
-          </h4>
-          <p class="list-group-item-text">
-            ああああてすとてすと
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 {% endblock content_membership %}
 
