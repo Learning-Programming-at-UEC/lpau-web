@@ -1,0 +1,10 @@
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+
+# 授業資料置き場所
+/files/
+# DB情報の外部ファイル
+# 本番のパスワードなどをリポジトリに載せたくないため
+databases.json

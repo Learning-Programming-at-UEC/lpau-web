@@ -1,0 +1,55 @@
+{% extends "base_membership.html" %}
+
+{% block title %}授業資料ダウンロード&nbsp;|&nbsp;{% endblock %}
+
+{% block content_membership %}
+<div id="description" class="row-fluid section">
+  <h3>授業資料ダウンロード</h3>
+  <span>
+    ここには説明文を入れる。<br>
+    今は仮の文章を入れている。
+  </span>
+</div>
+
+<div id="document-list" class="row-fluid section">
+  {% for difficulty, documents in document_list.items %}
+  <div class="panel panel-default" style="margin-bottom: 20px;">
+    <div class="list-group panel-body">
+      {% for document in documents %}
+      <a class="list-group-item" href="{% url 'membership:download_file' difficulty=difficulty date=document.date %}">
+        <h4 class="list-group-item-heading">
+          {{ document.file_name }}
+          <small>実施日:&nbsp;{{ document.datetime|date:'Y年m月d日' }}</small>
+        </h4>
+        <p class="list-group-item-text">
+          {# 未実装 #}
+          {{ document.description }}
+        </p>
+      </a>
+      {% endfor %}
+    </div>
+    {% comment %}
+    <nav class="panel-footer text-center">
+      <ul class="pagination" style="margin-top: 2px; margin-bottom: 2px;">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    {% endcomment %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock content_membership %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block header %}
+<strong>{{ user.last_name }}&nbsp;{{ user.first_name }}&nbsp;さん</strong>
+<a href="{% url 'logout' %}" class="btn btn-warning" role="button">ログアウト</a>
+{% endblock %}
+
+{% block sidebar %}
+<div id="sidebar" class="col-sm-3 row-fluid">
+  <div id="sidebar-main" class="navbar-collapse collapse">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation"
+        {% if sidebar == 'index' %}class="active"{% endif %}>
+        <a href="{% url 'membership:index' %}">Top</a>
+      </li>
+      <li role="presentation"
+        {% if sidebar == 'bbs' %}class="active"{% endif %}>
+        <a href="{% url 'membership:bbs' 1 %}">質問掲示板</a>
+      </li>
+      <li role="presentation"
+        {% if sidebar == 'download_document' %}class="active"{% endif %}>
+        <a href="{% url 'membership:download_document' %}">授業資料ダウンロード</a>
+      </li>
+      <li role="presentation" class="disabled">
+        <a href="#">スケジュール</a>
+      </li>
+      <li role="presentation"
+        {% if sidebar == 'teachers' %}class="active"{% endif %}>
+        <a href="{% url 'membership:teachers' %}">講師紹介</a>
+      </li>
+      <li role="presentation" class="disabled">
+        <a href="#">プログラム例</a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="content" class="col-sm-9 row-fluid">
+{% block content_membership %}
+{% endblock content_membership %}
+</div>
+{% endblock %}

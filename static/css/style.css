@@ -1,0 +1,72 @@
+#header-body > div > a > img,
+#header-body > div > a > span {
+  vertical-align: middle;
+  display: inline-block;
+}
+#header-body > div > a {
+  text-decoration: none;
+}
+
+#user-info,
+#user-info * {
+  display: inline-block;
+  text-align: right;
+}
+
+#nav-toggle {
+  margin: 0px 10px;
+}
+.nav > .app-nav-pills-right {
+  display: inline-block;
+  float: none;
+}
+
+.row, .row-fluid {
+  margin-top: 2px;
+}
+
+.section {
+  padding-top: 2px;
+  padding-bottom: 20px;
+}
+
+#external-menu > div {
+  padding: 8px 15px;
+}
+
+#external-menu .btn {
+  padding: 25px;
+}
+
+.thumbnail {
+  padding: 10px;
+}
+.thumbnail > .caption > h3 > small {
+  font-size: 60%;
+}
+.thumbnail > .list-group {
+  margin-bottom: 2px;
+}
+.thumbnail > .list-group > li {
+  height: 10em;
+  border-width: 1px 0px;
+  border-radius: 0px;
+  padding: 10px 2px;
+}
+.thumbnail > .list-group > li > p {
+  line-height: 1.2;
+}
+.thumbnail > .list-group > li:last-child {
+  border-bottom-width: 0px;
+}
+
+#footer {
+  height: 36px;
+  color: #FFF;
+  background-color: #3880bc;
+  border: 1px solid;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 6px;
+}

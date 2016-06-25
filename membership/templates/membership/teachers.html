@@ -1,0 +1,46 @@
+{% extends "base_membership.html" %}
+{% load staticfiles %}
+
+{% block title %}講師紹介&nbsp;|&nbsp;{% endblock %}
+
+{% block content_membership %}
+<div id="description" class="row-fluid section">
+  <h3>講師紹介</h3>
+  <span>
+    ここには説明文を入れる。<br>
+    今は仮の文章。<br>
+  </span>
+</div>
+
+<div id="news" class="row-fluid section">
+  {% for teacher in teachers %}
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="thumbnail">
+      <img src="{% static 'img/shadow.png' %}" class="img-rounded">
+      <div class="caption">
+        <h3>{{ teacher.name }}<br class="visible-sm"><small>（{{ teacher.kana }}）</small></h3>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h4 class="list-group-item-heading">
+            自己紹介
+          </h4>
+          <p class="list-group-item-text">
+            {{ teacher.introduction|linebreaksbr }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <h4 class="list-group-item-heading">
+            みんなへ
+          </h4>
+          <p class="list-group-item-text">
+            {{ teacher.to_students|linebreaksbr }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content_membership %}
+

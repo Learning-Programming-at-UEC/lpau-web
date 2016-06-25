@@ -1,0 +1,10 @@
+{
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "lpau",
+        "USER": "root",
+        "PASSWORD": "",
+        "HOST": "",
+        "PORT": ""
+    }
+}

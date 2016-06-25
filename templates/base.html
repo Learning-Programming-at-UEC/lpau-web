@@ -3,15 +3,82 @@
 <html lang="{{ LANGUAGE_CODE|default:"ja" }}">
 <head>
 <meta charset="UTF-8">
-<title>{% block title %}My homepage{% endblock %}</title>
-
+<title>{% block title %}{% endblock %}電気通信大学子供のためのプログラミング教室</title>
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 {% block extrahead %}{% endblock %}
 </head>
 <body>
-  <div class="container">
-    {% block content %}
-      {{ content }}
+  <div class="container-fluid">
+    <nav id="header" class="navbar navbar-default panel panel-default row-fluid" role="navigation">
+      <div id="header-header" class="panel-heading">
+        <ul class="nav nav-pills text-right">
+          <li class="app-nav-pills-right" role="presentation">
+            <a href="#">
+              <span class="glyphicon glyphicon-education"
+                    aria-hidden="true"></span>
+              電気通信大学
+            </a>
+          </li>
+          <li class="app-nav-pills-right" role="presentation">
+            <a href="#">
+              <span class="glyphicon glyphicon-question-sign"
+                    aria-hidden="true"></span>
+              FAQ
+            </a>
+          </li>
+          <li class="app-nav-pills-right" role="presentation">
+            <a href="#">
+              <span class="glyphicon glyphicon-info-sign"
+                    aria-hidden="true"></span>
+            問い合わせ
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="header-body" class="row-fluid panel-body">
+        <div class="h2">
+          <a href="{% url 'external:index' %}" style="display: inline-block;">
+            <img src="{% static 'img/pct_emblem02.jpg' %}">
+            <span>電気通信大学
+            <br class="hidden-md hidden-lg">
+            子供のための<br class="visible-xs">プログラミング教室</span>
+          </a>
+        </div>
+      </div>
+      <div id="header-footer" class="panel-footer text-right">
+        <div id="user-info">
+          {% block header %}
+            {{ header }}
+          {% endblock %}
+        </div>
+        <button id="nav-toggle"
+                type="button"
+                class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#sidebar-main"
+                area-expanted="false">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    {% block sidebar %}
+      {{ sidebar }}
     {% endblock %}
+
+    {% block content %}
+      {# {{ content }} #}
+    {% endblock %}
+
+    <footer id="footer" class="col-xs-12 text-center row-fluid section">
+      <span class="vertical-middle">&copy; 2016 電気通信大学 子供のためのプログラミング教室</span>
+    </footer>
   </div>
 </body>
 </html>
