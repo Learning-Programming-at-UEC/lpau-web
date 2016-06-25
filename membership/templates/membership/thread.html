@@ -1,0 +1,42 @@
+{% extends "base_membership.html" %}
+
+{% block title %}質問掲示板&nbsp;|&nbsp;{% endblock %}
+
+{% block content_membership %}
+<div id="description" class="row-fluid section">
+  <h3>質問掲示板</h3>
+  <span>
+    ここには説明文を入れる。<br>
+    今は仮。まる。
+  </span>
+</div>
+
+<div id="bbs" class="row-fluid section">
+  <div class="list-group">
+    {% for comment in comment_list %}
+    <a id="comment-{{ comment.id }}" class="list-group-item" href="#comment-{{ comment.id }}">
+      <div class="list-group-item-heading">
+        <h4 class="comment-user">
+          {{ comment.user.last_name }}&nbsp;{{ comment.user.first_name }}
+          <small class="comment-date">{{ comment.pub_date }}</small>
+        </h4>
+      </div>
+      <p class="list-group-item-text">
+        {{ comment.message }}
+      </p>
+    </a>
+    {% endfor %}
+  </div>
+
+  <form action="{{ form.action }}" method="post">
+    <div class="form-group">
+      <label for="id_{{ form.message.name }}">メッセージ</label>
+      <input id="id_{{ form.message.name }}" type="text" name="{{ form.message.name }}" maxlength="500"
+        class="form-control">
+    </div>
+    {% csrf_token %}
+    <input type="hidden" name="{{ form.user.name }}" value="{{ user.id }}">
+    <button type="submit" class="btn btn-default">投稿</button>
+  </form>
+</div>
+{% endblock content_membership %}

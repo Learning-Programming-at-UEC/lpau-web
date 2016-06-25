@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block header %}
-<strong>ユーザ名</strong>
+<strong>{{ user.last_name }}&nbsp;{{ user.first_name }}&nbsp;さん</strong>
 <a href="{% url 'logout' %}" class="btn btn-warning" role="button">ログアウト</a>
 {% endblock %}
 
@@ -14,7 +14,7 @@
         <a href="{% url 'membership:index' %}">Top</a>
       </li>
       <li role="presentation">
-        <a href="#">質問掲示板</a>
+        <a href="{% url 'membership:bbs' 1 %}">質問掲示板</a>
       </li>
       <li role="presentation">
         <a href="#">授業資料DL</a>

@@ -1,7 +1,13 @@
+from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
-from util.views import CommonTemplateView
-from util.views import CommonListView
 from util.views import CommonView
+from util.views import CommonTemplateView
+from django.views.generic import FormView
+from util.views import CommonDetailView
+from util.views import CommonListView
+
+from .models import Thread, Comment
+from .forms import CommentForm
 
 
 class IndexView(CommonTemplateView):
@@ -9,6 +15,27 @@ class IndexView(CommonTemplateView):
 
 class TeachersView(CommonTemplateView):
     template_name = 'membership/teachers.html'
+
+class ThreadView(FormView, CommonDetailView):
+    template_name = 'membership/thread.html'
+    model = Thread
+    form_class = CommentForm
+    success_url = './'
+
+    def get_context_data(self, **kwargs):
+        # 表示するスレッド
+        context = super(FormView, self).get_context_data(**kwargs)
+        thread = get_object_or_404(Thread, pk=self.kwargs.get(self.pk_url_kwarg))
+        context['comment_list'] = thread.comment_set.all().order_by('id')
+
+        return context
+
+    def form_valid(self, form):
+        form.instance.username = self.request.user.username
+        form.instance.thread = get_object_or_404(Thread, pk=self.kwargs.get(self.pk_url_kwarg))
+        form.instance.save()
+
+        return super(ThreadView, self).form_valid(form)
 
 
 # 講義資料リスト: linkは django_project_root/files/documents/ の中を指している
