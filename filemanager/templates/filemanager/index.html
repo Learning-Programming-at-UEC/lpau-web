@@ -1,0 +1,18 @@
+<html>
+<body>
+  <table>
+    <tr>
+      <th>ファイル</th>
+      <th>公開日</th>
+      <th></th>
+    </tr>
+    {% for datafile in files %}
+    <tr>
+      <td>{{ detafile.file_name }}</td>
+      <td>{{ datafile.pub_date }}</td>
+      <td><a href="{% url 'detail' datafile.pk %}">ダウンロード</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
