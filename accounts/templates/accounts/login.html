@@ -7,8 +7,7 @@
 {% endif %}
 
 <div id=content" class="row-fluid">
-  {# <form method="post" action="{% url 'django.contrib.auth.views.login' %}" #}
-  <form method="post" action="{% url 'login' %}"
+  <form method="post" action="{% url 'account:login' %}"
     class="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
     <div class="form-group">
       <label for="id_username">
