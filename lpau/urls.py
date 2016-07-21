@@ -22,11 +22,8 @@ urlpatterns = [
     url(r'^', include('external.urls')),
 
     url(r'^admin/', admin.site.urls),
-    url(r'^account/login/$', auth_views.login,
-        {'template_name': 'accounts/login.html'},
-        name='login'),
-    url(r'^account/logout/$', auth_views.logout,
-        {'template_name': 'accounts/logged_out.html'}, name='logout'),
+
+    url(r'^account/', include('accounts.urls')),
 
     url(r'^membership/', include('membership.urls')),
 ] + staticfiles_urlpatterns()
