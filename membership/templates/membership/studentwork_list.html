@@ -1,0 +1,36 @@
+{% extends "base_membership.html" %}
+{% load static %}
+
+{% block title %}生徒作品&nbsp;|&nbsp;{% endblock %}
+
+{% block content_membership %}
+<script type="text/javascript">
+  $(function(){
+    $('.python')
+      .each(function(i, block){
+        hljs.highlightBlock(block);
+      });
+  });
+</script>
+<div id="description" class="row-fluid section">
+  <h3>生徒作品</h3>
+  <span>
+    ここには説明文を入れる。<br>
+    今は仮の文章を入れている。
+  </span>
+</div>
+
+<div id="studentwork-list" class="row-fluid section">
+  {% for student_work in student_work_list %}
+  <div class="panel panel-default" style="margin-bottom: 20px;">
+    <div class="panel-heading">
+      {{ student_work.file_name|safe }}
+    </div>
+    <div class="panel-body">
+      <pre><code id="student_work_{{ student_work.id }}"
+        class="python">{{ student_work.data.read|safe }}</code></pre>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content_membership %}

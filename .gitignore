@@ -8,3 +8,6 @@ db.sqlite3
 # DB情報の外部ファイル
 # 本番のパスワードなどをリポジトリに載せたくないため
 databases.json
+
+# ローカルファイル
+media/
