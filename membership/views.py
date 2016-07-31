@@ -7,9 +7,12 @@ from util.views import CommonDetailView
 from util.views import CommonListView
 from datetime import datetime
 
-from .models import Thread, Comment
+from .models import Thread, Comment, StudentWork
 from .forms import CommentForm
 
+class StudentWorkView(CommonListView):
+    model = StudentWork
+    context_object_name = 'student_work_list'
 
 class IndexView(CommonTemplateView):
     template_name = 'membership/index.html'

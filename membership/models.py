@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime
 
 
 class Thread(models.Model):
@@ -27,3 +26,16 @@ class Comment(models.Model):
     class Meta:
         verbose_name = "コメント"
         verbose_name_plural = "コメント"
+
+class StudentWork(models.Model):
+    """生徒の作品"""
+    user = models.ForeignKey(User, verbose_name="ユーザ")
+    file_name = models.CharField("ファイル名", max_length=50)
+    data = models.FileField("データ", upload_to='student_works')
+    pub_date = models.DateTimeField("アップロード日時", auto_now_add=True, editable=False)
+
+    def __str__(self):
+        return self.file_name
+
+    class Meta:
+        verbose_name = verbose_name_plural = "生徒の作品"

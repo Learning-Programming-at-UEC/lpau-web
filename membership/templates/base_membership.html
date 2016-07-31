@@ -31,6 +31,10 @@
       <li role="presentation" class="disabled">
         <a href="#">プログラム例</a>
       </li>
+      <li role="presentation"
+        {% if sidebar == 'student_work' %}class="active"{% endif %}>
+        <a href="{% url 'membership:student_work' %}">生徒の作品</a>
+      </li>
     </ul>
   </div>
 </div>

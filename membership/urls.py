@@ -8,6 +8,9 @@ app_name = 'membership'
 urlpatterns = [
     # /membership/
     url(r'^$', views.IndexView.as_view(), {'sidebar': 'index'}, name='index'),
+    # /membership/student_work
+    url(r'^student_work/$', views.StudentWorkView.as_view(),
+        {'sidebar': 'student_work'}, name='student_work'),
     # /membership/bbs/<pk>/
     url(r'^bbs/$', RedirectView.as_view(url='1/')),
     url(r'^bbs/(?P<pk>\d+)/$', views.ThreadView.as_view(),
